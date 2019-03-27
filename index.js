@@ -33,7 +33,10 @@ module.exports = {
         'no-irregular-whitespace': ['error'],
         'space-before-function-paren': ['error', 'always'],
         'no-constant-condition': ['error'],
-        'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
+        'no-unused-vars': ['error', {
+            'argsIgnorePattern': '^_',
+            'ignoreRestSiblings': true,
+        }],
         'eol-last': ['error', 'always'],
         'comma-dangle': ['error', 'always-multiline'],
     },
