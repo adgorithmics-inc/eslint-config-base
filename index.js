@@ -32,7 +32,7 @@ module.exports = {
         'no-undef': ['error'],
         'no-irregular-whitespace': ['error'],
         'space-before-function-paren': ['error', 'always'],
-        'no-constant-condition': ['error'],
+        'no-constant-condition': ['error', { 'checkLoops': false }],
         'no-unused-vars': ['error', { 'argsIgnorePattern': '^_' }],
         'eol-last': ['error', 'always'],
         'comma-dangle': ['error', 'always-multiline'],
