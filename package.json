@@ -1,6 +1,6 @@
 {
   "name": "@adgorithmics/eslint-config-base",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "base eslint config for adgorithmics with (mostly) sane default linting rules",
   "main": "index.js",
   "scripts": {
