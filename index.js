@@ -21,7 +21,10 @@ module.exports = {
         'no-undef': ['error'],
         'no-irregular-whitespace': ['error'],
         'no-constant-condition': ['error', { checkLoops: false }],
-        'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        'no-unused-vars': ['error', {
+            argsIgnorePattern: '^_',
+            varsIgnorePattern: '^_',
+        }],
         'eol-last': ['error', 'always'],
         'comma-dangle': ['error', 'always-multiline'],
     },
