@@ -14,5 +14,8 @@
   "license": "ISC",
   "peerDependencies": {
     "eslint": ">= 3"
+  },
+  "dependencies": {
+    "eslint-plugin-jest": "22.7.2"
   }
 }

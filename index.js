@@ -21,15 +21,23 @@ module.exports = {
         'no-undef': ['error'],
         'no-irregular-whitespace': ['error'],
         'no-constant-condition': ['error', { checkLoops: false }],
-        'no-unused-vars': ['error', {
-            argsIgnorePattern: '^_',
-            varsIgnorePattern: '^_',
-        }],
+        'no-unused-vars': [
+            'error',
+            {
+                argsIgnorePattern: '^_',
+                varsIgnorePattern: '^_',
+            },
+        ],
         'eol-last': ['error', 'always'],
         'comma-dangle': ['error', 'always-multiline'],
+        'jest/no-disabled-tests': 'error',
+        'jest/expect-expect': 'error',
+        'jest/no-commented-out-tests': 'error',
+        'jest/no-empty-title': 'error',
     },
     env: {
         es6: true,
     },
-    extends: ['eslint:recommended'],
+    extends: ['eslint:recommended', 'plugin:jest/recommended'],
+    plugins: ['jest'],
 };
