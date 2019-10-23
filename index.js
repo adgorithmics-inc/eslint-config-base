@@ -13,7 +13,7 @@ module.exports = {
         'no-trailing-spaces': ['error'],
         'semi-spacing': ['error', { before: false, after: true }],
         'no-loop-func': ['error'],
-        'no-magic-numbers': ['error', { ignore: [0, 1, 2] }],
+        'no-magic-numbers': ['error', { ignore: [0, 1, 2, 100] }],
         'no-redeclare': ['error'],
         'no-unused-expressions': ['error'],
         'no-use-before-define': ['error'],
