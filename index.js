@@ -23,7 +23,7 @@ module.exports = {
         'jest/no-disabled-tests': 'error',
         'jest/expect-expect': 'error',
         'jest/no-commented-out-tests': 'error',
-        'jest/no-empty-title': 'error',
+        'jest/valid-title': 'error',
     },
     env: {
         es6: true,
