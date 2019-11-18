@@ -1,25 +1,17 @@
 module.exports = {
     rules: {
-        semi: ['error', 'always'],
-        curly: ['error'],
         eqeqeq: ['error'],
         'no-plusplus': ['error'],
         'max-depth': ['error', 4],
         camelcase: ['error', { properties: 'never' }],
         'no-array-constructor': ['error'],
-        'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
-        'no-multiple-empty-lines': ['error', { max: 2 }],
-        'no-spaced-func': ['error'],
-        'no-trailing-spaces': ['error'],
-        'semi-spacing': ['error', { before: false, after: true }],
         'no-loop-func': ['error'],
-        'no-magic-numbers': ['error', { ignore: [0, 1, 2, 100] }],
+        'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2, 100] }],
         'no-redeclare': ['error'],
         'no-unused-expressions': ['error'],
         'no-use-before-define': ['error'],
         yoda: ['error'],
         'no-undef': ['error'],
-        'no-irregular-whitespace': ['error'],
         'no-constant-condition': ['error', { checkLoops: false }],
         'no-unused-vars': [
             'error',
@@ -28,8 +20,6 @@ module.exports = {
                 varsIgnorePattern: '^_',
             },
         ],
-        'eol-last': ['error', 'always'],
-        'comma-dangle': ['error', 'always-multiline'],
         'jest/no-disabled-tests': 'error',
         'jest/expect-expect': 'error',
         'jest/no-commented-out-tests': 'error',
@@ -38,6 +28,31 @@ module.exports = {
     env: {
         es6: true,
     },
-    extends: ['eslint:recommended', 'plugin:jest/recommended'],
-    plugins: ['jest'],
+    extends: [
+        'eslint:recommended',
+        'plugin:jest/recommended',
+        'plugin:prettier/recommended',
+    ],
+    plugins: ['jest', 'prettier'],
+    overrides: [
+        {
+            files: [
+                '**/*.test.js',
+                '**/*.spec.js',
+                '**/*.test.ts',
+                '**/*.spec.ts',
+            ],
+            rules: {
+                'no-magic-numbers': 'off',
+                '@typescript-eslint/no-magic-numbers': 'off',
+                'no-global-assign': 'off',
+            },
+            env: {
+                jest: true,
+            },
+            parserOptions: {
+                ecmaVersion: 9,
+            },
+        },
+    ],
 };
