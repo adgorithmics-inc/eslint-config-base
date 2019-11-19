@@ -37,6 +37,7 @@ module.exports = {
     overrides: [
         {
             files: [
+                '**/__tests__/**',
                 '**/*.test.js',
                 '**/*.spec.js',
                 '**/*.test.ts',
