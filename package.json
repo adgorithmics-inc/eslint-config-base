@@ -3,15 +3,12 @@
   "version": "1.4.2",
   "description": "base eslint config for adgorithmics with (mostly) sane default linting rules",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "eslint",
     "eslintconfig"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Adgorithmics, LLC",
+  "license": "MIT",
   "peerDependencies": {
     "eslint": ">= 3"
   },
