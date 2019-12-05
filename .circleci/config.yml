@@ -1,0 +1,60 @@
+version: 2
+
+references:
+    pin-npm-version: &pin-npm-version
+        run:
+            name: Pin NPM to specified version
+            command: sudo npm install -g npm@6.4.1
+
+jobs:
+    publish:
+        docker:
+            - image: circleci/node:10.13.0
+
+        steps:
+            - *pin-npm-version
+            - checkout
+            - add_ssh_keys:
+                  fingerprints:
+                      - '94:f4:21:22:d9:17:e4:e4:49:6f:56:75:2c:df:6a:7c'
+
+            - run:
+                  name: Set branch environemnt variable
+                  command: |
+                      echo '(echo "$CIRCLE_TAG" | grep -Eq  ^.*-rc.*$) && export BRANCH=$(echo "$CIRCLE_TAG" | sed "s/^v//" | sed "s/-rc.*//") || export BRANCH="master"' >> $BASH_ENV
+                      source $BASH_ENV
+            - run: npm version --no-git-tag-version ${CIRCLE_TAG}
+            - run: git add package.json package-lock.json
+            - run: git commit -m "Automatic NPM version bump ${CIRCLE_TAG}"
+            - run: git checkout -b temp
+            - run: git push origin temp:$BRANCH
+            - run: npm publish --access public
+
+    publish-hot:
+        docker:
+            - image: circleci/node:10.13.0
+
+        steps:
+            - *pin-npm-version
+            - checkout
+            - run: npm version --no-git-tag-version ${CIRCLE_TAG}
+            - run: npm publish --access public
+
+workflows:
+    version: 2
+    test-and-publish:
+        jobs:
+            - publish:
+                  context: npm-publish
+                  filters:
+                      tags:
+                          only: /^v[0-9]+(\.[0-9]+)*(-rc\.[0-9]*)*/
+                      branches:
+                          ignore: /.*/
+            - publish-hot:
+                  context: npm-publish
+                  filters:
+                      tags:
+                          only: /^v[0-9]+(\.[0-9]+)*-hot/
+                      branches:
+                          ignore: /.*/

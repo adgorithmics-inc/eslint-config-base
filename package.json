@@ -3,17 +3,16 @@
   "version": "1.4.2",
   "description": "base eslint config for adgorithmics with (mostly) sane default linting rules",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "eslint",
     "eslintconfig"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Adgorithmics, Inc",
+  "license": "MIT",
   "peerDependencies": {
-    "eslint": ">= 3"
+    "eslint": ">=6",
+    "eslint-config-prettier": ">= 6",
+    "@typescript-eslint/eslint-plugin": ">= 2"
   },
   "files": [
     "index.js",
@@ -21,13 +20,11 @@
     "typescript.js"
   ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "2.7.0",
-    "@typescript-eslint/parser": "2.7.0",
-    "eslint-config-prettier": "6.6.0",
-    "eslint-plugin-jest": "23.0.4",
+    "@typescript-eslint/parser": "2.10.0",
+    "eslint-plugin-jest": "23.1.1",
     "eslint-plugin-prettier": "3.1.1",
-    "eslint-plugin-react": "7.16.0",
+    "eslint-plugin-react": "7.17.0",
     "eslint-plugin-react-hooks": "2.3.0",
-    "typescript": "3.7.2"
+    "typescript": "3.7.3"
   }
 }
