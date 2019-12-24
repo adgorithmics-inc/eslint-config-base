@@ -45,11 +45,13 @@ module.exports = {
             ],
             rules: {
                 'no-magic-numbers': 'off',
-                '@typescript-eslint/no-magic-numbers': 'off',
                 'no-global-assign': 'off',
+                '@typescript-eslint/no-magic-numbers': 'off',
+                '@typescript-eslint/no-explicit-any': 'off',
             },
             env: {
                 jest: true,
+                node: true,
             },
             parserOptions: {
                 ecmaVersion: 9,
