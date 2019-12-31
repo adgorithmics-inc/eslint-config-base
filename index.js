@@ -6,7 +6,13 @@ module.exports = {
         camelcase: ['error', { properties: 'never' }],
         'no-array-constructor': ['error'],
         'no-loop-func': ['error'],
-        'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2, 100] }],
+        'no-magic-numbers': [
+            'error',
+            {
+                ignore: [0, 1, -1, 2, 100],
+                detectObjects: true,
+            },
+        ],
         'no-redeclare': ['error'],
         'no-unused-expressions': ['error'],
         'no-use-before-define': ['error'],
