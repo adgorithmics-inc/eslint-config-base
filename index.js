@@ -5,6 +5,7 @@ module.exports = {
         'max-depth': ['error', 4],
         camelcase: ['error', { properties: 'never' }],
         'no-array-constructor': ['error'],
+        'no-console': ['error'],
         'no-loop-func': ['error'],
         'no-magic-numbers': [
             'error',
