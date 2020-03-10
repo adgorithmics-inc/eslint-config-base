@@ -7,13 +7,7 @@ module.exports = {
         'no-array-constructor': ['error'],
         'no-console': ['error'],
         'no-loop-func': ['error'],
-        'no-magic-numbers': [
-            'error',
-            {
-                ignore: [0, 1, -1, 2, 100],
-                detectObjects: true,
-            },
-        ],
+        'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2, 100] }],
         'no-redeclare': ['error'],
         'no-unused-expressions': ['error'],
         'no-use-before-define': ['error'],
