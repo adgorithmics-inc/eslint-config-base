@@ -27,6 +27,7 @@ module.exports = {
                 varsIgnorePattern: '^_',
             },
         ],
+        curly: 'error',
         'jest/no-disabled-tests': 'error',
         'jest/expect-expect': 'error',
         'jest/no-commented-out-tests': 'error',
