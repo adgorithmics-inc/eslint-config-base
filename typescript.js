@@ -4,7 +4,6 @@ module.exports = {
             'error',
             {
                 ignore: [0, 1, -1, 2, 100],
-                detectObjects: true,
                 ignoreReadonlyClassProperties: true,
                 ignoreEnums: true,
                 ignoreNumericLiteralTypes: true,
