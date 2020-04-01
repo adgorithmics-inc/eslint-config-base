@@ -35,4 +35,18 @@ module.exports = {
             jsx: true,
         },
     },
+    overrides: [
+        {
+            files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
+            rules: {
+                'no-global-assign': 'off',
+                '@typescript-eslint/no-magic-numbers': 'off',
+                '@typescript-eslint/no-explicit-any': 'off',
+            },
+            env: {
+                jest: true,
+                node: true,
+            },
+        },
+    ],
 };

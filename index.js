@@ -38,18 +38,10 @@ module.exports = {
     plugins: ['jest', 'prettier'],
     overrides: [
         {
-            files: [
-                '**/__tests__/**',
-                '**/*.test.js',
-                '**/*.spec.js',
-                '**/*.test.ts',
-                '**/*.spec.ts',
-            ],
+            files: ['**/__tests__/**', '**/*.test.js', '**/*.spec.js'],
             rules: {
                 'no-magic-numbers': 'off',
                 'no-global-assign': 'off',
-                '@typescript-eslint/no-magic-numbers': 'off',
-                '@typescript-eslint/no-explicit-any': 'off',
             },
             env: {
                 jest: true,
