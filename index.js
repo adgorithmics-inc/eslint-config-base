@@ -2,7 +2,6 @@ module.exports = {
     rules: {
         eqeqeq: ['error'],
         'no-plusplus': ['error'],
-        'max-depth': ['error', 4],
         camelcase: ['error', { properties: 'never' }],
         'no-array-constructor': ['error'],
         'no-console': ['error'],
